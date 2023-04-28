@@ -1,0 +1,18 @@
+-- 1 - Quais as caronas com destino Praia Vermelha a partir do dia 01/07/2022?
+SELECT id FROM carona WHERE destino = "Praia vermelha" AND data_hora >= "2022-07-01 00:00:00";
+
+
+-- 2 - Quais os nomes dos usuários que disponibilizam caronas com partida em São Gonçalo?
+SELECT identificacao.nome FROM identificacao 
+JOIN usuario ON usuario.idIdentificacao = identificacao.id
+JOIN carona ON carona.idUsuario = usuario.id
+WHERE carona.partida = "São Gonçalo"
+GROUP BY identificacao.nome;
+
+
+-- 3 - Quais os nomes dos usuários que disponibilizam caronas com pelo menos 2 passageiros e com parada no Plaza Shopping? 
+SELECT identificacao.nome, carona.data_hora, carona.passageiros FROM identificacao 
+JOIN usuario ON usuario.idIdentificacao = identificacao.id
+JOIN carona ON carona.idUsuario = usuario.id
+JOIN parada ON parada.idCarona = carona.id
+WHERE carona.passageiros >= 2 AND parada.descricao = "Plaza Shopping";

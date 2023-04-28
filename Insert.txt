@@ -1,0 +1,29 @@
+-- inserindo identificação
+
+INSERT INTO identificacao(nome, cpf) VALUES("Alberto Silva", "111.111.111-11");
+INSERT INTO identificacao(nome, cpf) VALUES("Ana Souza", "222.222.222-22");
+INSERT INTO identificacao(nome, cpf) VALUES("João Mesquita", "333.333.333-33");
+
+-- inserindo usuário
+
+INSERT INTO usuario(idIdentificacao) VALUES(1);
+INSERT INTO usuario(idIdentificacao) VALUES(2);
+INSERT INTO usuario(idIdentificacao) VALUES(3);
+
+-- inserindo carona
+
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(6, "Penha", "Mutuá", "2022-06-29 14:00:00", 2);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(7, "São Gonçalo", "Praia vermelha", "2022-06-30 17:00:00", 1);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(7, "São Gonçalo", "Praia vermelha", "2022-07-01 17:00:00", 3);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(7, "São Gonçalo", "Praia vermelha", "2022-07-02 17:00:00", 2);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(7, "São Gonçalo", "Praia vermelha", "2022-07-03 17:00:00", 1);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(6, "Rio de Janeiro", "Praia vermelha", "2022-07-02 14:00:00", 1);
+INSERT INTO carona(idUsuario, partida, destino, data_hora, passageiros) VALUES(8, "São Gonçalo", "Icaraí", "2022-06-29 11:00:00", 2);
+
+-- inserindo Paradas
+
+INSERT INTO parada(idCarona, descricao) VALUES(7, "Plaza Shopping");
+INSERT INTO parada(idCarona, descricao) VALUES(4, "Plaza Shopping");
+INSERT INTO parada(idCarona, descricao) VALUES(5, "Plaza Shopping");
+INSERT INTO parada(idCarona, descricao) VALUES(6, "Plaza Shopping");
+INSERT INTO parada(idCarona, descricao) VALUES(3, "Plaza Shopping");

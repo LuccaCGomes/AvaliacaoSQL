@@ -1,0 +1,29 @@
+CREATE TABLE identificacao(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome TEXT,
+    cpf TEXT
+);
+
+CREATE TABLE usuario(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	idIdentificacao INT,
+    FOREIGN KEY (idIdentificacao) REFERENCES identificacao(id),
+    admin BOOLEAN
+);
+
+CREATE TABLE carona(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    idUsuario INT,
+    FOREIGN KEY(idUsuario) REFERENCES usuario(id),
+    partida TEXT,
+    destino TEXT,
+    data_hora DATETIME,
+    passageiros INT
+);
+
+CREATE TABLE parada(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    idCarona INT,
+    FOREIGN KEY(idCarona) REFERENCES carona(id),
+    descricao TEXT
+);
